@@ -12,6 +12,14 @@
 
   background-color: white;
   z-index: 1;
+
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
 }
 
 .product > img {
