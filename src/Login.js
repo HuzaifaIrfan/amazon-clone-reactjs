@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import { auth } from "./firebase";
+import { auth, provider } from "./firebase";
 
 import "./Login.css";
 
@@ -24,7 +24,19 @@ function Login() {
       })
       .catch((error) => alert(error.message));
 
-    // fancy firebase stuff
+    //fancy firebase stuff
+  };
+
+  const signInwithGoogle = (e) => {
+    auth
+      .signInWithPopup(provider)
+      .then((auth) => {
+        //   console.log(auth);
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
 
   const register = (e) => {
@@ -78,8 +90,13 @@ function Login() {
           By continuing, you agree to Amazon Fake Clone Conditions of Use and
           Privacy Notice.
         </p>
+
+        <button className="login__signInButton" onClick={signInwithGoogle}>
+          Sign In with Google
+        </button>
+
         <button className="login__registerButton" onClick={register}>
-          Create your Amazon Account
+          Create your Fake Amazon Account
         </button>
       </div>
     </div>

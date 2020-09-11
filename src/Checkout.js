@@ -16,7 +16,16 @@ function Checkout() {
         <img className="checkout_ad" alt="deal_banner" src="deal_banner.jpeg" />
 
         <div>
-          <h3>Hello, {!user ? "Guest" : user?.email}</h3>
+          <h3>
+            Hello{" "}
+            {!user
+              ? "Guest"
+              : user.displayName
+              ? user?.displayName
+              : user?.email}
+          </h3>
+
+          {/* Hello {!user ? "Guest" : user?.email} */}
           <h2 className="checkout_title">The shopping Basket</h2>
 
           {basket.map((item, index) => {
