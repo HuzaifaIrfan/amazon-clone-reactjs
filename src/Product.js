@@ -32,7 +32,11 @@ function Product({ id, title, image, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => {
-              return <span role="img">⭐</span>;
+              return (
+                <span key={i} role="img">
+                  ⭐
+                </span>
+              );
             })}
         </div>
       </div>
