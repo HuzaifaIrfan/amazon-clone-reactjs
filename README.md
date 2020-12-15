@@ -1,4 +1,5 @@
 # amazon-clone-reactJS
+### Clever Programmer 5-Day React JavaScript Challenge 7 sept 2020 to 11 sept 2020
 
 Amazon web UI Clone with ReactJS and Firebase. with Google Login and firebase Database
 
